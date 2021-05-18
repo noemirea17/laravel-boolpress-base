@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Post;
+use Carbon\Carbon;
 
 class PostsTableSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class PostsTableSeeder extends Seeder
 
             $new_post->name = $faker->name();
             $new_post->email = $faker->email();
-            $new_post->date = $faker->date();
+            $new_post->date = $faker->date('Y_m_d');
             $new_post->text = $faker->paragraph();
 
             $new_post->save();
